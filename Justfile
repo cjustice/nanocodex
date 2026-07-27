@@ -214,6 +214,10 @@ smoke-browser-vm-egress rootfs gvproxy firmware=".cache/libkrunfw/libkrunfw":
 bench-browser:
     cargo bench -p nanocodex-browser --bench browser_protocol
 
+# Deterministic task loading, sweep planning, durable resume, and ATIF gates.
+bench-eval:
+    cargo bench -p nanocodex-eval --bench eval_runtime
+
 # Live cached-image boot, first action, warm CDP actions, screenshot, and
 # teardown. Criterion runs with the crate as cwd, so normalize artifact paths.
 bench-browser-live rootfs gvproxy firmware=".cache/libkrunfw/libkrunfw":
